@@ -14,7 +14,7 @@ GUILD = os.environ.get('DISCORD_GUILD')
 
 print(f"yahan pe --> ", TOKEN)
 
-client = discord.Client()
+#client = discord.Client()
 
 bot = commands.Bot(command_prefix='!')
 
