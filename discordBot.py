@@ -1,5 +1,5 @@
 import os
-import discord
+#import discord
 import random
 from discord.ext import commands
 from dotenv import load_dotenv
