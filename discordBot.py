@@ -9,9 +9,6 @@ from discord.ext import commands
 TOKEN = os.environ.get('DISCORD_TOKEN')
 GUILD = os.environ.get('DISCORD_GUILD')
 
-# TOKEN = 'NzM5NTEwNzA5MzE4MTg5MTI2.XybhBA.9ZB2dELcgNRZxJ9wcbSR4xsbJZw'
-# GUILD = '739066226382209136'
-
 client = discord.Client()
 
 bot = commands.Bot(command_prefix='!')
