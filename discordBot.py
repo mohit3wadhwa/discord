@@ -2,15 +2,15 @@ import os
 #import discord
 import random
 from discord.ext import commands
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
-# TOKEN = os.environ.get('DISCORD_TOKEN')
-# GUILD = os.environ.get('DISCORD_GUILD')
+TOKEN = os.environ.get('DISCORD_TOKEN')
+GUILD = os.environ.get('DISCORD_GUILD')
 
-TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
+# TOKEN = os.getenv('DISCORD_TOKEN')
+# GUILD = os.getenv('DISCORD_GUILD')
 
 print(f"yahan pe --> ", TOKEN)
 
