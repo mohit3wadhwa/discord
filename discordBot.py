@@ -2,6 +2,7 @@ import os
 #import discord
 import random
 from discord.ext import commands
+import requests
 #from dotenv import load_dotenv
 
 #load_dotenv()
@@ -17,6 +18,36 @@ print(f"yahan pe --> ", TOKEN)
 #client = discord.Client()
 
 bot = commands.Bot(command_prefix='!')
+
+def get_covid_stat():
+    url = "https://api.covid19api.com/summary"
+    
+    dictCov = {}
+    list1 = []
+    
+    try:
+        req = requests.get(url)
+        print("Status Code: ",  req.status_code)
+        res_dict = req.json()
+        list1 = res_dict['Countries']
+    
+        for items in range(0, len(list1) - 1):
+            dictCov = list1[items]
+            if dictCov['Country'] == "India":
+                break
+            dictCov = {}
+    except ValueError:
+        print('Decoding JSON has failed. Problem with API Call')
+    
+    # listCov.append(dictCov['TotalConfirmed'])
+    # listCov.append(dictCov['TotalRecovered'])
+    # listCov.append(dictCov['TotalDeaths'])
+    
+    return dictCov
+
+@bot.command(name='covid', help="This command shows India's Covid Statistics")
+async def covid(ctx):
+    await ctx.send(get_covid_stat())
 
 @bot.command(name='gn', help="This command greets good night")
 async def gn(ctx):
