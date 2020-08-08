@@ -21,8 +21,7 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.command(name='birth', help="This command checks whether anyone has birthday today!")
 async def birthday_check(ctx):
-    #response = "Today's no one's Birthday"
-    response = "Today is Simi's Birthday :ballon"
+    response = "Today is no one's Birthday"
     await ctx.send(response)
 
 
@@ -34,7 +33,7 @@ async def rollDice(ctx):
 
 @bot.event
 async def on_command_error(ctx, error):
-    await ctx.send('No such command!')
+    await ctx.send('No such command, try "!help"')
 
 
 
