@@ -108,6 +108,10 @@ async def mul(ctx, firstNum: int, secondNum: int):
 async def div(ctx, firstNum: int, secondNum: int):
     number = firstNum / secondNum
     await ctx.send(float(number))
+    
+@bot.command(name='cmfa', help="test command")
+async def div(ctx):
+    await ctx.send('Test Command for CMFA')
 
 @bot.event
 async def on_command_error(ctx, error):
